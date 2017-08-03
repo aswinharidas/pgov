@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
+    <sys_db_object action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <actions_access>false</actions_access>
+        <alter_access>false</alter_access>
+        <client_scripts_access>false</client_scripts_access>
+        <configuration_access>false</configuration_access>
+        <create_access>false</create_access>
+        <create_access_controls>true</create_access_controls>
+        <delete_access>false</delete_access>
+        <extension_model/>
+        <is_extendable>false</is_extendable>
+        <label>Service Provider</label>
+        <live_feed_enabled>false</live_feed_enabled>
+        <name>x_12945_pgov_dt_service_provider</name>
+        <number_ref/>
+        <provider_class/>
+        <read_access>true</read_access>
+        <super_class/>
+        <sys_class_code/>
+        <sys_class_name>sys_db_object</sys_class_name>
+        <sys_class_path/>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-28 02:41:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7a4c4460db540300e5fc793ebf961905</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Provider</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_db_object_7a4c4460db540300e5fc793ebf961905</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-28 02:41:42</sys_updated_on>
+        <update_access>false</update_access>
+        <user_role display_value="x_12945_pgov.service_provider_user" name="x_12945_pgov.service_provider_user">24acc460db540300e5fc793ebf961938</user_role>
+        <ws_access>true</ws_access>
+    </sys_db_object>
+</record_update>

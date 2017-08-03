@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_12945_pgov.GovernanceConstants</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GovernanceConstants</name>
+        <script><![CDATA[var GovernanceConstants = Class.create();
+GovernanceConstants.prototype = {
+    initialize: function() {
+    },
+	
+	IssueTaskProgression : {
+		1 : "GOV0001001,GOV0001002,GOV0001003,GOV0001004",
+		2 : "GOV0001005",
+		3 : "GOV0001006"
+	},
+
+    type: 'GovernanceConstants'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-31 15:02:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6d42d6e9dbd08300e5fc793ebf96194d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GovernanceConstants</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_script_include_6d42d6e9dbd08300e5fc793ebf96194d</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-31 15:02:16</sys_updated_on>
+    </sys_script_include>
+</record_update>

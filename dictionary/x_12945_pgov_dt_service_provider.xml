@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Service Provider" max_length="40" name="x_12945_pgov_dt_service_provider" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Owner Group List" mandatory="true" max_length="1024" name="owner_group_list" reference="sys_user_group" reference_qual="nameSTARTSWITHPGOV^nameLIKE_OWNER_^ORnameENDSWITH_ADMIN^EQ" reference_qual_condition="nameSTARTSWITHPGOV^nameLIKE_OWNER_^ORnameENDSWITH_ADMIN^EQ" type="glide_list"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Reporting Group List" max_length="1024" name="reporting_group_list" reference="sys_user_group" reference_qual="nameSTARTSWITHPGOV_^nameLIKE_RPT_^active=true^EQ" reference_qual_condition="nameSTARTSWITHPGOV_^nameLIKE_RPT_^active=true^EQ" type="glide_list"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Service Provider Group List" max_length="1024" name="service_provider_group_list" reference="sys_user_group" reference_qual="active=true^nameSTARTSWITHPGOV_SP^EQ" reference_qual_condition="active=true^nameSTARTSWITHPGOV_SP^EQ" type="glide_list"/>
+    </element>
+</database>

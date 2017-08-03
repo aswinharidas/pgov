@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>false</admin_overrides>
+        <advanced>true</advanced>
+        <condition table="x_12945_pgov_pt_governance_task.assignment_group">locked=true^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <name>x_12945_pgov_pt_governance_task.assignment_group</name>
+        <operation display_value="create">create</operation>
+        <script><![CDATA[answer=false;]]></script>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-08-01 03:29:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b8bd3c75db188300e5fc793ebf961953</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_12945_pgov_pt_governance_task.assignment_group</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_security_acl_b8bd3c75db188300e5fc793ebf961953</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-08-01 03:29:51</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_12945_pgov.support_group_and_contacts_user" name="x_12945_pgov.support_group_and_contacts_user">9de3762cdb580300e5fc793ebf96190a</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-28 14:52:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>95e3762cdb580300e5fc793ebf96190c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>9de3762cdb580300e5fc793ebf96190a</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_embedded_help_role_95e3762cdb580300e5fc793ebf96190c</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-28 14:52:29</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

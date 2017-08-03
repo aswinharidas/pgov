@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="Governance Task" max_length="40" name="x_12945_pgov_pt_governance_task" sizeclass="6" type="collection">
+        <element label="Governance Configuration Record" max_length="32" name="governance_configuration_record" reference="x_12945_pgov_ct_governance_config" type="reference"/>
+        <element label="Locked" max_length="40" name="locked" type="boolean"/>
+        <element label="Parent Governance Record" max_length="32" name="parent_governance_record" read_only="true" reference="x_12945_pgov_pt_governance" type="reference"/>
+    </element>
+</database>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_12945_pgov.PGOVAjax</api_name>
+        <client_callable>true</client_callable>
+        <description>var ga = new GlideAjax('x_12945_pgov.PGOVAjax');&#13;
+ga.addParam('sysparm_name','getTriageOwnerGroup');&#13;
+ga.addParam('sysparm_sp',);&#13;
+ga.addParam('sysparm_ws',);&#13;
+ga.getXML(callback_processResponse);&#13;
+&#13;
+function callback_processResponse(response){&#13;
+console.warn(response);&#13;
+}&#13;
+&#13;
+</description>
+        <name>PGOVAjax</name>
+        <script><![CDATA[var PGOVAjax = Class.create();
+var PGOVUtils = new PGOVUtils();
+PGOVAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getTriageOwnerGroup : function(){
+		gs.info('Hello Moto!');
+		this.serviceProvider = this.getParameter('sysparm_sp');
+		this.workstream = this.getParameter('sysparm_ws');
+		var ans = PGOVUtils.getTriageOwnerGroup(this.serviceProvider,this.workstream);
+		return ans;
+	},
+	
+
+    type: 'PGOVAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-28 15:10:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>75e63aacdb580300e5fc793ebf9619bc</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>PGOVAjax</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_script_include_75e63aacdb580300e5fc793ebf9619bc</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-29 08:29:43</sys_updated_on>
+    </sys_script_include>
+</record_update>

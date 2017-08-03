@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>group</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-31 14:01:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fbf48265dbd08300e5fc793ebf961996</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>group</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_ui_policy_action_fbf48265dbd08300e5fc793ebf961996</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-31 14:01:40</sys_updated_on>
+        <table>x_12945_pgov_ct_governance_config</table>
+        <ui_policy display_value="OG Type = Direct">6ed44265dbd08300e5fc793ebf961920</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>

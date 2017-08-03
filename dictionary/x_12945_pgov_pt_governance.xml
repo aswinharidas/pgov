@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Governance" max_length="40" name="x_12945_pgov_pt_governance" type="collection">
+        <element choice="1" label="Service Provider" mandatory="true" max_length="32" name="service_provider" reference="x_12945_pgov_dt_service_provider" reference_qual="javascript:new x_12945_pgov.PGOVUtils().getEntitledSPRecords('refQual')" type="reference" use_reference_qualifier="advanced">
+            <choice/>
+        </element>
+        <element label="Workstream" max_length="32" name="workstream" reference="x_12945_pgov_dt_workstream" reference_qual="javascript: new x_12945_pgov.PGOVUtils().getMappedWorkstreams('refQual',current.service_provider,true)" type="reference" use_reference_qualifier="advanced"/>
+    </element>
+</database>

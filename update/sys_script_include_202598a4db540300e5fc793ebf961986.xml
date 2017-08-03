@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_12945_pgov.PGOVUtils</api_name>
+        <client_callable>false</client_callable>
+        <description>Entitled Service Provider Usage for RefQual : new x_12945_pgov.PGOVUtils().getEntitledSPRecords('refQual');&#13;
+&#13;
+new x_12945_pgov.PGOVUtils().getMappedWorkstreams('refQual',true);&#13;
+&#13;
+new x_12945_pgov.PGOVUtils().generateTasks(/*Config Record Numbers*/,/*Parent Governance Record*/);&#13;
+&#13;
+&#13;
+new x_12945_pgov.PGOVUtils().util_setValue(/*table*/,/*encodedQuery*/,/*fieldValueObj*/,/* setWorkflow*/, /*autoSysFields*/);&#13;
+/*if(typeof setWorkflow != 'undefined' &amp;&amp; !gs.nil(setWorkflow))&#13;
+			this.recordToBeUpdated.setWorkflow(setWorkflow);&#13;
+		&#13;
+		if(typeof autoSysFields != 'undefined' &amp;&amp; !gs.nil(autoSysFields))&#13;
+			this.recordToBeUpdated.autoSysFields(autoSysFields);</description>
+        <name>PGOVUtils</name>
+        <script><![CDATA[var PGOVUtils = Class.create();
+PGOVUtils.prototype = {
+	initialize: function() {
+		this.debug = gs.getProperty('x_12945_pgov.pgov.debug_mode',false) == "true";
+		this.util_addToLog('Started','SI_PGOVUtils_initialize');
+	},
+	
+	util_addToLog: function(message,source){
+		if(this.debug)
+			gs.info(message,source);
+		
+		return 1;
+	},
+	
+	util_isEmpty : function(obj){
+		return gs.nil(obj);
+	},
+	
+	util_isMember : function(groupList,group){
+		this.util_addToLog('Started : util_isMember','SI_PGOVUtils_util_isMember');
+		if(typeof groupList != 'undefiend'){
+			this.groupList = groupList;
+			this.groupList = this.groupList.split(",");
+			for(var groupListi =0; groupListi < this.groupList.length; groupListi++){
+				if(gs.getUser().isMemberOf(this.groupList[groupListi])){
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		if(typeof group != 'undefiend'){
+			return gs.getUser().isMemberOf(group);
+		}
+		
+		this.util_addToLog('Completed : util_isMember : NO MATCH FOUND','SI_PGOVUtils_util_isMember');
+		return -1;
+	},
+	
+	getEntitledSPRecords: function(type){
+		var entitledServiceProviders = [],
+		spGR = new GlideRecord('x_12945_pgov_dt_service_provider');
+		
+		spGR.addQuery('active',true);
+		spGR.query();
+		while(spGR.next()){
+			if(!this.util_isEmpty(spGR.owner_group_list.getDisplayValue()) && this.util_isMember(spGR.owner_group_list.getDisplayValue())){
+				
+				entitledServiceProviders.push(spGR.getValue('sys_id'));
+				
+			}else if(!this.util_isEmpty(spGR.reporting_group_list.getDisplayValue()) && this.util_isMember(spGR.reporting_group_list.getDisplayValue())){
+				
+				entitledServiceProviders.push(spGR.getValue('sys_id'));
+				
+			}else if(!this.util_isEmpty(spGR.service_provider_group_list.getDisplayValue()) && this.util_isMember(spGR.service_provider_group_list.getDisplayValue())){
+				
+				entitledServiceProviders.push(spGR.getValue('sys_id'));
+				
+			}else{
+				
+				this.util_addToLog('Not entitled : '+spGR.getDisplayValue(),'SI_PGOVUtils_getEntitledSPRecords');
+				
+			}
+			
+		}
+		
+		if(typeof type != undefined && !gs.nil(type)){
+			
+			if(type == 'refQual')
+				return "sys_idIN"+entitledServiceProviders.join(",");
+		}else{
+			
+			return entitledServiceProviders.join(",");
+			
+		}
+		return -1;
+	},
+	
+	
+	getMappedWorkstreams : function(type,serviceProviderRecord, checkEntitlement){
+		if(typeof serviceProviderRecord == 'undefined' || gs.nil(serviceProviderRecord)){
+			return -1;
+		}else{
+			this.spGR = serviceProviderRecord;
+		}
+		
+		//TODO
+		if(typeof checkEntitlement != 'undefined' && !gs.nil(checkEntitlement)){
+			this.checkEntitlement = checkEntitlement === true;
+		}
+		
+		var wsGR = new GlideRecord('x_12945_pgov_dt_workstream'),
+		wsGREncodedQuery = 'active=true^service_provider_entitlementLIKE'+this.spGR+'^x_12945_pgov_pt_issue=true',
+		wsResponseQuery = [];
+		wsGR.addEncodedQuery(wsGREncodedQuery);
+		wsGR.query();
+		while(wsGR.next()){
+			wsResponseQuery.push(wsGR.getUniqueValue());
+		}
+		
+		if(typeof type != undefined && !gs.nil(type)){
+			
+			if(type == 'refQual'){
+				return "sys_idIN"+wsResponseQuery.join(",");
+			}
+		}else{
+			
+			return wsResponseQuery.join(",");
+			
+		}
+		return -1;
+		
+	},
+	
+	getTriageOwnerGroup: function(service_provider,workstream){
+		var sgcGR = new GlideRecord('x_12945_pgov_dt_support_group_and_contacts'),
+		sgcGREncodedQuery = 'active=true^record_type=Issue - Triage^service_provider='+service_provider+'^workstream='+workstream;
+		sgcGR.addEncodedQuery(sgcGREncodedQuery);
+		sgcGR.query();
+		if(sgcGR.next()){
+			return sgcGR.getValue('owner_group');
+		}
+		return -1;
+	},
+	
+	
+	util_checkRecord: function(table,encodedQuery){
+		var tableGR = new GlideRecord(table);
+		tableGR.addQuery(encodedQuery);
+		tableGR.query();
+		return tableGR.hasNext();
+	},
+	
+	util_getRecord: function(table,encodedQuery){
+		var tableGetGR = new GlideRecord(table);
+		tableGetGR.addQuery(encodedQuery);
+		tableGetGR.query();
+		if(tableGetGR.next())
+			return tableGetGR;
+		
+		return -1;
+	},
+	
+	util_setValue : function(table,encodedQuery,fieldValueObj, setWorkflow, autoSysFields){
+		this.recordToBeUpdated = this.util_getRecord(table,encodedQuery);
+		
+		if(this.recordToBeUpdated == -1)
+			return -1;
+		
+		if(typeof fieldValueObj == 'undefined' || gs.nil(fieldValueObj))
+			return -1;
+		
+		this.fieldValueObj = fieldValueObj;
+		
+		for(var i in this.fieldValueObj){
+			gs.info(i);
+			
+			if(this.fieldValueObj.hasOwnProperty(i))
+				this.recordToBeUpdated[i] = this.fieldValueObj[i];
+		}
+		
+		this.recordToBeUpdated.update();
+		
+		return 1;
+		
+		
+	},
+	
+	
+generateTasks : function(configRecordIDs, current){
+		if(typeof current == 'undefined' || gs.nil(current)){
+			return -1;
+		}
+		
+		if(typeof configRecordIDs == 'undefined' || gs.nil(configRecordIDs)){
+			return -2;
+		}
+		
+		this.current = current;
+		this.configRecordIDs = configRecordIDs;
+		
+		var configGR = new GlideRecord('x_12945_pgov_ct_governance_config'),
+		configGREncodedQuery = 'active=true^config_record_type=Task^governance_task_type='+this.current.sys_class_name+'^numberIN'+this.configRecordIDs,
+		output = {},
+		previousTaskProcessingOrder = 10;
+			
+			configGR.addEncodedQuery(configGREncodedQuery);
+			configGR.orderBy('order');
+			configGR.query();
+			
+			while(configGR.next()){
+				
+				var taskGR = new GlideRecord('x_12945_pgov_pt_governance_task');
+				taskGR.newRecord();//Using new Record so as to Generate a Number
+				
+				//Group all the Fields where the value needs to be fetched from the Config Record
+				taskGR.governance_configuration_record = configGR.getUniqueValue();
+				taskGR.state = configGR.getValue('default_state');
+				
+				
+				//Set up assignment Groups "og_assignment_type"
+				var ogType = configGR.getValue('og_assignment_type');
+				if(ogType == 'Direct'){
+					taskGR.assignment_group = configGR.getValue('group');
+				}else if(ogType == 'Same as Parent'){
+					taskGR.assignment_group = this.current.assignment_group.sys_id;
+				}else if(ogType == 'Script'){
+					taskGR.assignment_group = new GlideScopedEvaluator().evaluateScript(configGR, 'og_assignment_script', {
+						"current" : this.current
+					});
+				}
+				//TODO Logic for Assigned To
+				
+				//Group all the Fields where the value needs to be fetched from the parent record
+				taskGR.short_description = configGR.getValue('title');
+				taskGR.short_description = taskGR.short_description.replace('${0}',' : '+this.current.getValue('number'));
+				
+				//Logic to handle lock
+				if(previousTaskProcessingOrder != configGR.getValue('processing_order'))
+					taskGR.locked = true;
+				
+					
+				taskGR.parent_governance_record = this.current.getUniqueValue();
+				taskGR.insert();
+					
+				output[taskGR.getUniqueValue()] = taskGR.number.getDisplayValue();
+					
+					
+			}
+				
+			if(!gs.nil(output)){
+				return global.JSON().encode(output);
+			}
+			return 1;
+	},
+	
+	type: 'PGOVUtils'
+};
+		
+		]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-28 03:41:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>202598a4db540300e5fc793ebf961986</sys_id>
+        <sys_mod_count>59</sys_mod_count>
+        <sys_name>PGOVUtils</sys_name>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_script_include_202598a4db540300e5fc793ebf961986</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-08-01 03:04:25</sys_updated_on>
+    </sys_script_include>
+</record_update>

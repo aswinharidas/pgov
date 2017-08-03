@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="short_description" label="Title" language="en" table="x_12945_pgov_pt_governance">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <help/>
+            <hint/>
+            <label>Title</label>
+            <language>en</language>
+            <name>x_12945_pgov_pt_governance</name>
+            <plural>Titles</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-28 14:20:22</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>e77c2628db580300e5fc793ebf9619c7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Title</sys_name>
+            <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+            <sys_update_name>sys_documentation_x_12945_pgov_pt_governance_short_description_en</sys_update_name>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-28 14:20:22</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

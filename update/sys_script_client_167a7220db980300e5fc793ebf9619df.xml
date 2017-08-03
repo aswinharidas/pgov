@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>workstream</field>
+        <global>true</global>
+        <messages/>
+        <name>Fill OwnerGroup</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading || newValue === '') {
+		if(newValue === ''){
+			g_form.setReadOnly('assignment_group',false);
+			g_form.setValue('assignment_group','');
+			g_form.hideFieldMsg('assignment_group');
+		}
+		
+		return;
+	}
+	//Type appropriate comment here, and begin script below
+	
+	
+	var ga = new GlideAjax('x_12945_pgov.PGOVAjax');
+	ga.addParam('sysparm_name','getTriageOwnerGroup');
+	ga.addParam('sysparm_sp',g_form.getValue('service_provider'));
+	ga.addParam('sysparm_ws',g_form.getValue('workstream'));
+	ga.getXML(callback_processResponse);
+}
+
+function callback_processResponse(response){
+	this.og = response.responseXML.documentElement.getAttribute("answer");
+	g_form.setValue('assignment_group',this.og);
+	g_form.showFieldMsg('assignment_group','Triage group based on ServiceProvider/Workstream combination has been auto-assigned.');
+	g_form.setReadOnly('assignment_group',true);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>aswinh</sys_created_by>
+        <sys_created_on>2017-07-28 15:22:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>167a7220db980300e5fc793ebf9619df</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Fill OwnerGroup</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+        <sys_update_name>sys_script_client_167a7220db980300e5fc793ebf9619df</sys_update_name>
+        <sys_updated_by>aswinh</sys_updated_by>
+        <sys_updated_on>2017-07-29 08:41:07</sys_updated_on>
+        <table>x_12945_pgov_pt_issue</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

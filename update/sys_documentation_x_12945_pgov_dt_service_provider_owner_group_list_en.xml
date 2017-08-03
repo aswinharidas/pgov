@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="owner_group_list" label="Owner Group List" language="en" table="x_12945_pgov_dt_service_provider">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>owner_group_list</element>
+            <help/>
+            <hint/>
+            <label>Owner Group List</label>
+            <language>en</language>
+            <name>x_12945_pgov_dt_service_provider</name>
+            <plural>Owner Group Lists</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-28 03:07:03</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>ff62dc24db540300e5fc793ebf9619d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Owner Group List</sys_name>
+            <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+            <sys_update_name>sys_documentation_x_12945_pgov_dt_service_provider_owner_group_list_en</sys_update_name>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-28 03:07:03</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

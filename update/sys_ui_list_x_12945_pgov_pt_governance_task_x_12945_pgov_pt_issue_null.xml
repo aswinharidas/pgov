@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="x_12945_pgov_pt_issue" relationship="" sys_domain="global" table="x_12945_pgov_pt_governance_task" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>1d17ecdddb584300e5fc793ebf9619c0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>state</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>9d17ecdddb584300e5fc793ebf9619c0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>governance_configuration_record</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>1117ecdddb584300e5fc793ebf9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assignment_group</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>9117ecdddb584300e5fc793ebf9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assigned_to</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>1517ecdddb584300e5fc793ebf9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="x_12945_pgov_pt_governance_task" element="NULL" name="x_12945_pgov_pt_governance_task" parent="x_12945_pgov_pt_issue" relationship="NULL" sys_domain="global" view="Default view">d517ecdddb584300e5fc793ebf9619c0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-30 12:32:42</sys_created_on>
+            <sys_id>9517ecdddb584300e5fc793ebf9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-30 12:32:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_12945_pgov_pt_governance_task</name>
+            <parent>x_12945_pgov_pt_issue</parent>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-31 20:39:36</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>df106f2ddb548300e5fc793ebf96194b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name/>
+            <sys_package/>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+            <sys_update_name/>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-31 20:39:36</sys_updated_on>
+            <sys_user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

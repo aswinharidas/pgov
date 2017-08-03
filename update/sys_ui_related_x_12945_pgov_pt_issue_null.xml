@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_related sys_domain="global" table="x_12945_pgov_pt_issue" version="2" view="">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Issue - Default view" name="x_12945_pgov_pt_issue" related_list="NULL" sys_domain="global" view="Default view">b42bb121dbd08300e5fc793ebf961940</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>x_12945_pgov_pt_governance_task.parent_governance_record</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-31 13:18:25</sys_created_on>
+            <sys_id>f02bb121dbd08300e5fc793ebf961941</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-31 13:18:25</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Issue - Default view</calculated_name>
+            <filter/>
+            <name>x_12945_pgov_pt_issue</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>aswinh</sys_created_by>
+            <sys_created_on>2017-07-31 13:18:25</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b42bb121dbd08300e5fc793ebf961940</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Issue - Default view</sys_name>
+            <sys_package display_value="pgov" source="x_12945_pgov">623c006cdb100300e5fc793ebf96199a</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="pgov">623c006cdb100300e5fc793ebf96199a</sys_scope>
+            <sys_update_name>sys_ui_related_x_12945_pgov_pt_issue_null</sys_update_name>
+            <sys_updated_by>aswinh</sys_updated_by>
+            <sys_updated_on>2017-07-31 13:18:25</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

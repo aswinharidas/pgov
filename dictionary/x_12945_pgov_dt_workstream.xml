@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Workstream" max_length="40" name="x_12945_pgov_dt_workstream" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Issue Management" max_length="40" name="issue_management" type="boolean"/>
+        <element label="Issue Support Group List" max_length="32" name="issue_support_group_list" reference="sys_user_group" type="glide_list"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Service Provider Entitlement" max_length="4000" name="service_provider_entitlement" reference="x_12945_pgov_dt_service_provider" type="glide_list"/>
+        <element display="true" label="Workstream" max_length="100" name="workstream" type="string"/>
+        <element label="Available For Issues" max_length="40" name="x_12945_pgov_pt_issue" type="boolean"/>
+        <index name="index">
+            <element name="issue_support_group_list"/>
+        </index>
+    </element>
+</database>

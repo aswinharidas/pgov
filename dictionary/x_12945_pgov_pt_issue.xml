@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="x_12945_pgov_pt_governance" label="Issue" max_length="40" name="x_12945_pgov_pt_issue" sizeclass="1" type="collection"/>
+</database>

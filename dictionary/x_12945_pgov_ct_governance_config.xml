@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Governance Config" max_length="40" name="x_12945_pgov_ct_governance_config" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Applies to All Combinations" max_length="40" name="applies_to_all_combinations" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Config Record Type" max_length="40" name="config_record_type" type="string">
+            <choice>
+                <element label="Task" sequence="0" value="Task"/>
+                <element label="Approval" sequence="1" value="Approval"/>
+            </choice>
+        </element>
+        <element label="Default State" max_length="40" name="default_state" type="integer"/>
+        <element choice="1" label="Governance Task Type" max_length="40" name="governance_task_type" type="choice">
+            <choice>
+                <element label="Issue" sequence="0" value="x_12945_pgov_pt_issue"/>
+            </choice>
+        </element>
+        <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="OG Assignment Script" max_length="4000" name="og_assignment_script" type="script"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="No Assignment" label="OG Assignment Type" max_length="40" name="og_assignment_type" type="string">
+            <choice>
+                <element label="No Assignment" sequence="0" value="No Assignment"/>
+                <element label="Direct" sequence="1" value="Direct"/>
+                <element label="Same as Parent" sequence="2" value="Same as Parent"/>
+                <element label="Support Group and Contacts Lookup" sequence="3" value="Support Group and Contacts Lookup"/>
+                <element label="Script" sequence="4" value="Script"/>
+            </choice>
+        </element>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="No Assignment" label="O Assignment Type" max_length="40" name="o_assignment_type" type="string">
+            <choice>
+                <element label="No Assignment" sequence="0" value="No Assignment"/>
+                <element label="Same as Parent" sequence="1" value="Same as Parent"/>
+                <element label="Direct" sequence="2" value="Direct"/>
+                <element label="Script" sequence="3" value="Script"/>
+            </choice>
+        </element>
+        <element label="Processing Order" max_length="40" name="processing_order" type="integer"/>
+        <element label="Progression Order" max_length="40" name="progression_order" type="integer"/>
+        <element label="Service Provider" max_length="32" name="service_provider" reference="x_12945_pgov_dt_service_provider" type="reference"/>
+        <element label="Title" max_length="100" name="title" type="string"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Workstream" max_length="32" name="workstream" reference="x_12945_pgov_dt_workstream" type="reference"/>
+        <index name="index">
+            <element name="workstream"/>
+        </index>
+        <index name="index2">
+            <element name="service_provider"/>
+        </index>
+        <index name="index3">
+            <element name="user"/>
+        </index>
+        <index name="index4">
+            <element name="group"/>
+        </index>
+    </element>
+</database>
